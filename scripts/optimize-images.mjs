@@ -17,13 +17,13 @@ for (const file of await readdir(SRC)) {
   const { width, height } = await img.metadata();
   const info = await img
     .resize({ width: Math.min(width, MAX_WIDTH), withoutEnlargement: true })
-    .webp({ quality: 78 })
+    .webp({ quality: 92, smartSubsample: true, effort: 6 })
     .toFile(path.join(OUT, `${name}.webp`));
   console.log(`${name}.webp  ${info.width}x${info.height}  ${(info.size / 1024).toFixed(0)}KB  (source ${width}x${height})`);
 }
 
 await sharp(path.join(SRC, "living-double-height.jpg"))
   .resize(1200, 630, { fit: "cover", position: "centre" })
-  .jpeg({ quality: 82, mozjpeg: true })
+  .jpeg({ quality: 90, mozjpeg: true })
   .toFile(path.join(OUT, "og-image.jpg"));
 console.log("og-image.jpg  1200x630");

@@ -24,14 +24,14 @@ export function Hero() {
 
       <div className="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-7xl flex-col justify-end px-4 pb-28 pt-40 sm:px-6 lg:min-h-[44rem] lg:justify-center lg:px-8 lg:py-24">
         <div className="max-w-2xl">
-          <p className="eyebrow rise rise-1">{t.hero.eyebrow}</p>
+          <p className="eyebrow rise rise-1 !text-sand">{t.hero.eyebrow}</p>
           <h1
             id="hero-title"
             className="font-display rise rise-2 mt-5 text-[2.6rem] text-sand sm:text-6xl lg:text-[4.6rem]"
           >
             {t.hero.title}
           </h1>
-          <p className="rise rise-3 mt-6 max-w-xl text-lg font-light leading-relaxed text-sand/90 sm:text-xl">
+          <p className="rise rise-3 mt-6 max-w-xl text-lg font-light leading-relaxed text-sand sm:text-xl">
             {t.hero.lead}
           </p>
 
@@ -59,7 +59,7 @@ export function Hero() {
             href={googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rise rise-4 mt-8 inline-flex items-center gap-3 text-sm text-sand/85 hover:text-sand"
+            className="rise rise-4 mt-8 inline-flex items-center gap-3 text-sm text-sand"
           >
             <span className="flex gap-0.5 text-brass" aria-hidden="true">
               {Array.from({ length: 5 }, (_, i) => (

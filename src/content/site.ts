@@ -392,7 +392,7 @@ const he = {
         title: "מחויבות לנגישות",
         body: [
           "דרור ברזני INDOOR רואה חשיבות במתן שירות שוויוני לכל הלקוחות, כולל אנשים עם מוגבלות. השקענו מאמצים כדי שהאתר יהיה נוח לשימוש לכולם.",
-          "האתר נבנה בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013, ולתקן הישראלי ת\"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.",
+          "האתר נבנה במטרה לעמוד בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013, ובתקן הישראלי ת\"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.",
         ],
       },
       {
@@ -403,7 +403,7 @@ const he = {
           "בראש כל עמוד יש קישור \"דלג לתוכן הראשי\".",
           "לכל תמונה יש טקסט חלופי שמתאר את תוכנה.",
           "הכותרות בנויות בהיררכיה תקינה, ולכל שדה בטופס יש תווית מקושרת.",
-          "צבעי הטקסט והרקע עומדים ביחס ניגודיות של 4.5:1 לפחות.",
+          "יחס הניגודיות בין הטקסט לרקע נמדד ועומד על 4.5:1 לפחות, גם בטקסט שמופיע על גבי תמונות.",
           "תפריט נגישות צף מאפשר להגדיל ולהקטין טקסט, לעבור לניגודיות גבוהה או למונוכרום, להבליט קישורים ולאפס את ההגדרות.",
           "האתר מכבד את הגדרת המערכת להפחתת תנועה.",
         ],
@@ -411,13 +411,19 @@ const he = {
       {
         title: "דפדפנים וטכנולוגיות מסייעות",
         body: [
-          "האתר מיועד לגרסאות עדכניות של Chrome, Firefox, Safari ו-Edge, במחשב ובטלפון נייד, ולשימוש עם קוראי מסך.",
+          "האתר נבדק בכלי בדיקה אוטומטי (axe) ובבדיקות ידניות של ניווט במקלדת, בדפדפן Chrome, במחשב ובגודל מסך של טלפון נייד.",
         ],
       },
       {
         title: "הסדרי נגישות בעסק",
         body: [
           "השירות שלנו ניתן בבית הלקוח. אם אתם זקוקים להתאמה כלשהי בפגישה או במהלך העבודה, ספרו לנו מראש ונדאג לה.",
+        ],
+      },
+      {
+        title: "מגבלות ידועות",
+        list: [
+          "קישורים לשירותים חיצוניים, כמו וואטסאפ, Google Maps וביקורות גוגל, נפתחים באתרים שאינם בשליטתנו, ורמת הנגישות שלהם באחריות מפעיליהם.",
         ],
       },
       {
@@ -771,7 +777,7 @@ const en: Dict = {
         title: "Our commitment",
         body: [
           "Dror Barazani INDOOR is committed to giving every client equal service, including people with disabilities. We have worked to make this website easy for everyone to use.",
-          "The site was built in line with the Israeli Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 2013, and Israeli Standard IS 5568, which is based on the WCAG 2.0 guidelines at level AA.",
+          "The site was built with the aim of meeting the Israeli Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 2013, and Israeli Standard IS 5568, which is based on the WCAG 2.0 guidelines at level AA.",
         ],
       },
       {
@@ -782,7 +788,7 @@ const en: Dict = {
           "Every page starts with a \"Skip to main content\" link.",
           "Every image has alternative text describing what it shows.",
           "Headings follow a correct hierarchy, and every form field has a linked label.",
-          "Text and background colours meet a contrast ratio of at least 4.5:1.",
+          "Text-to-background contrast has been measured at 4.5:1 or higher, including text shown over photos.",
           "A floating accessibility menu lets you enlarge or reduce text, switch to high contrast or monochrome, highlight links and reset your settings.",
           "The site respects your system's reduced-motion setting.",
         ],
@@ -790,13 +796,19 @@ const en: Dict = {
       {
         title: "Browsers and assistive technology",
         body: [
-          "The site is designed for current versions of Chrome, Firefox, Safari and Edge, on desktop and mobile, and for use with screen readers.",
+          "The site was checked with an automated testing tool (axe) and by manual keyboard testing, in Chrome, on desktop and at mobile screen size.",
         ],
       },
       {
         title: "Accessibility of our service",
         body: [
           "We work in our clients' homes. If you need any adjustment for a meeting or during the work, let us know in advance and we'll arrange it.",
+        ],
+      },
+      {
+        title: "Known limitations",
+        list: [
+          "Links to external services such as WhatsApp, Google Maps and Google reviews open sites we don't control; their accessibility is up to their operators.",
         ],
       },
       {

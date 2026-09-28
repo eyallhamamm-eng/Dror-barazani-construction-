@@ -1,0 +1,14 @@
+{
+  "name": "דרור ברזני INDOOR | קבלן שיפוצים בירושלים",
+  "short_name": "INDOOR",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f8f4ec",
+  "theme_color": "#1c1713",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

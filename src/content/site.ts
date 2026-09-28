@@ -331,6 +331,7 @@ const he = {
       errorName: "כתבו את שמכם כדי שנדע למי לחזור",
       errorPhone: "כתבו מספר טלפון תקין, למשל 050-1234567",
       sent: "ההודעה נפתחה בוואטסאפ. נותר רק ללחוץ על שליחה.",
+      pending: "פותחים את וואטסאפ…",
       messageIntro: "שלום דרור, הגעתי מהאתר.",
     },
     details: {
@@ -353,6 +354,8 @@ const he = {
     accessibility: "הצהרת נגישות",
     rights: "כל הזכויות שמורות",
     backToTop: "חזרה לראש העמוד",
+    privacy: "מדיניות פרטיות",
+    terms: "תנאי שימוש",
   },
   floating: {
     label: "פעולות מהירות",
@@ -432,6 +435,132 @@ const he = {
       email: "דוא\"ל:",
       emailValue: "[כתובת דוא\"ל]",
     },
+  },
+  notFound: {
+    metaTitle: "העמוד לא נמצא | דרור ברזני INDOOR",
+    metaDescription: "העמוד שחיפשתם לא קיים באתר דרור ברזני INDOOR, קבלן שיפוצים בירושלים.",
+    eyebrow: "שגיאה 404",
+    title: "העמוד הזה לא קיים",
+    text: "ייתכן שהקישור שבור או שהעמוד הוסר. אפשר לחזור לעמוד הבית או לכתוב לנו ישר בוואטסאפ.",
+    home: "חזרה לעמוד הבית",
+    whatsapp: "שלחו הודעה בוואטסאפ",
+  },
+  thankYou: {
+    metaTitle: "תודה | דרור ברזני INDOOR",
+    metaDescription: "הפרטים שלכם נפתחו בוואטסאפ. דרור ברזני יחזור אליכם כדי לתאם פגישה.",
+    eyebrow: "תודה",
+    title: "ההודעה בדרך לדרור",
+    text: "וואטסאפ נפתח בחלון חדש עם הפרטים שמילאתם. נשאר רק ללחוץ על שליחה.",
+    nextTitle: "מה קורה עכשיו",
+    next: [
+      "דרור קורא את ההודעה וחוזר אליכם בשעות הפעילות כדי לתאם פגישה בבית.",
+      "בפגישה הוא מודד, שומע מה חשוב לכם ומכין הצעת מחיר מפורטת, סעיף אחרי סעיף.",
+    ],
+    notOpened: "וואטסאפ לא נפתח?",
+    openAgain: "פתחו אותו כאן",
+    orCall: "או התקשרו",
+    home: "חזרה לעמוד הבית",
+  },
+  legal: {
+    updated: "עודכן לאחרונה:",
+    back: "חזרה לעמוד הבית",
+  },
+  privacy: {
+    metaTitle: "מדיניות פרטיות | דרור ברזני INDOOR",
+    metaDescription: "איך אתר דרור ברזני INDOOR מטפל במידע שלכם: מה נאסף, למה, ואיך מבקשים לעיין במידע או למחוק אותו.",
+    title: "מדיניות פרטיות",
+    updatedDate: "[תאריך עדכון]",
+    sections: [
+      {
+        title: "מי אנחנו",
+        body: [
+          "האתר שייך לדרור ברזני INDOOR, קבלן שיפוצים בירושלים. המדיניות הזו מסבירה איזה מידע עובר דרך האתר ומה אנחנו עושים איתו. היא נכתבה בהתאם לחוק הגנת הפרטיות, התשמ\"א-1981, ולתקנות שלו.",
+        ],
+      },
+      {
+        title: "איזה מידע נאסף",
+        list: [
+          "הפרטים שאתם ממלאים בטופס יצירת הקשר: שם, טלפון, סוג העבודה, אזור ותיאור קצר. האתר לא שומר אותם. הם עוברים ישירות להודעת וואטסאפ שאתם שולחים בעצמכם.",
+          "העדפות תצוגה, כמו שפה והגדרות נגישות, נשמרות רק בדפדפן שלכם (localStorage) ולא נשלחות אלינו.",
+          "נתוני שימוש כלליים ואנונימיים דרך Vercel Web Analytics: אילו עמודים נצפו, סוג המכשיר והמדינה. הכלי לא משתמש בעוגיות ולא מזהה אתכם אישית.",
+          "שרת האחסון (Vercel) שומר יומני גישה טכניים, כמו כתובת IP, לצורכי אבטחה ותפעול.",
+        ],
+      },
+      {
+        title: "למה אנחנו משתמשים במידע",
+        body: [
+          "כדי לחזור אליכם, לתאם פגישה ולהכין הצעת מחיר. נתוני השימוש עוזרים לנו להבין אילו עמודים עובדים ואילו צריך לשפר. אנחנו לא מוכרים מידע ולא משתמשים בו לפרסום.",
+        ],
+      },
+      {
+        title: "שירותים חיצוניים",
+        body: [
+          "שיחות בוואטסאפ כפופות למדיניות הפרטיות של WhatsApp (Meta). קישורי ניווט נפתחים ב-Google Maps וכפופים למדיניות של Google. האתר מאוחסן אצל Vercel.",
+        ],
+      },
+      {
+        title: "עוגיות (Cookies)",
+        body: [
+          "האתר לא משתמש בעוגיות מעקב או פרסום, ולכן אין בו באנר עוגיות. אם זה ישתנה, נעדכן את המדיניות ונבקש את הסכמתכם לפני ההפעלה.",
+        ],
+      },
+      {
+        title: "הזכויות שלכם",
+        body: [
+          "אתם יכולים לבקש לעיין במידע שיש לנו עליכם, לתקן אותו או למחוק אותו. פנו אלינו בטלפון או בוואטסאפ ונטפל בבקשה תוך 30 יום.",
+        ],
+      },
+      {
+        title: "יצירת קשר בנושא פרטיות",
+        list: ["טלפון: 054-237-7390", "דוא\"ל: [כתובת דוא\"ל]"],
+      },
+    ],
+  },
+  terms: {
+    metaTitle: "תנאי שימוש | דרור ברזני INDOOR",
+    metaDescription: "תנאי השימוש באתר דרור ברזני INDOOR, קבלן שיפוצים בירושלים.",
+    title: "תנאי שימוש",
+    updatedDate: "[תאריך עדכון]",
+    sections: [
+      {
+        title: "כללי",
+        body: [
+          "השימוש באתר כפוף לתנאים האלה. אם אתם לא מסכימים להם, אל תשתמשו באתר. התנאים מנוסחים בלשון רבים ומתייחסים לכל המגדרים.",
+        ],
+      },
+      {
+        title: "המידע באתר",
+        body: [
+          "התוכן באתר נועד לתת מושג על השירותים שלנו. הוא לא הצעת מחיר ולא התחייבות. מחיר, היקף עבודה ולוח זמנים נקבעים רק בהצעת מחיר כתובה, אחרי ביקור בבית.",
+        ],
+      },
+      {
+        title: "תמונות ותוכן",
+        body: [
+          "התמונות באתר צולמו בפרויקטים שביצענו. כל הזכויות בתמונות, בטקסטים ובעיצוב שמורות לדרור ברזני INDOOR. אין להעתיק אותם או להשתמש בהם בלי אישור בכתב.",
+        ],
+      },
+      {
+        title: "קישורים לאתרים אחרים",
+        body: [
+          "האתר מקשר לשירותים כמו וואטסאפ, Google Maps וביקורות גוגל. אנחנו לא אחראים לתוכן או לזמינות של אתרים חיצוניים.",
+        ],
+      },
+      {
+        title: "אחריות",
+        body: [
+          "אנחנו משתדלים שהמידע באתר יהיה מדויק ועדכני, אבל ייתכנו בו טעויות. האחריות על עבודות השיפוץ נקבעת בחוזה שנחתם מול כל לקוח.",
+        ],
+      },
+      {
+        title: "דין וסמכות שיפוט",
+        body: ["על התנאים חל הדין הישראלי. סמכות השיפוט הבלעדית נתונה לבתי המשפט בירושלים."],
+      },
+      {
+        title: "שינויים בתנאים",
+        body: ["אנחנו רשאים לעדכן את התנאים מעת לעת. הנוסח המחייב הוא זה שמופיע באתר."],
+      },
+    ],
   },
 };
 
@@ -584,6 +713,7 @@ const en: Dict = {
       errorName: "Enter your name so we know who to get back to",
       errorPhone: "Enter a valid phone number, for example 050-1234567",
       sent: "Your message is open in WhatsApp. Just tap send.",
+      pending: "Opening WhatsApp…",
       messageIntro: "Hi Dror, I found you through your website.",
     },
     details: {
@@ -606,6 +736,8 @@ const en: Dict = {
     accessibility: "Accessibility statement",
     rights: "All rights reserved",
     backToTop: "Back to top",
+    privacy: "Privacy policy",
+    terms: "Terms of use",
   },
   floating: {
     label: "Quick actions",
@@ -685,6 +817,130 @@ const en: Dict = {
       email: "Email:",
       emailValue: "[Email address]",
     },
+  },
+  notFound: {
+    metaTitle: "Page not found | Dror Barazani INDOOR",
+    metaDescription: "The page you were looking for doesn't exist on the Dror Barazani INDOOR website.",
+    eyebrow: "Error 404",
+    title: "This page doesn't exist",
+    text: "The link may be broken or the page may have been removed. Head back to the home page, or message us directly on WhatsApp.",
+    home: "Back to home page",
+    whatsapp: "Message us on WhatsApp",
+  },
+  thankYou: {
+    metaTitle: "Thank you | Dror Barazani INDOOR",
+    metaDescription: "Your details are open in WhatsApp. Dror Barazani will get back to you to arrange a visit.",
+    eyebrow: "Thank you",
+    title: "Your message is on its way to Dror",
+    text: "WhatsApp has opened in a new window with the details you filled in. Just tap send.",
+    nextTitle: "What happens next",
+    next: [
+      "Dror reads your message and gets back to you during business hours to arrange a home visit.",
+      "At the visit he measures up, hears what matters to you and prepares an itemised quote, line by line.",
+    ],
+    notOpened: "WhatsApp didn't open?",
+    openAgain: "Open it here",
+    orCall: "or call",
+    home: "Back to home page",
+  },
+  legal: {
+    updated: "Last updated:",
+    back: "Back to home page",
+  },
+  privacy: {
+    metaTitle: "Privacy Policy | Dror Barazani INDOOR",
+    metaDescription: "How the Dror Barazani INDOOR website handles your information: what's collected, why, and how to ask to see or delete it.",
+    title: "Privacy policy",
+    updatedDate: "[Update date]",
+    sections: [
+      {
+        title: "Who we are",
+        body: [
+          "This website belongs to Dror Barazani INDOOR, a renovation contractor in Jerusalem. This policy explains what information passes through the site and what we do with it. It follows the Israeli Privacy Protection Law, 1981, and its regulations.",
+        ],
+      },
+      {
+        title: "What we collect",
+        list: [
+          "The details you enter in the contact form: name, phone, type of work, area and a short description. The site doesn't store them. They go straight into a WhatsApp message that you send yourself.",
+          "Display preferences, such as language and accessibility settings, are stored only in your browser (localStorage) and are never sent to us.",
+          "General, anonymous usage data through Vercel Web Analytics: which pages were viewed, device type and country. It uses no cookies and doesn't identify you personally.",
+          "Our hosting provider (Vercel) keeps technical access logs, such as IP addresses, for security and operations.",
+        ],
+      },
+      {
+        title: "How we use it",
+        body: [
+          "To get back to you, arrange a visit and prepare a quote. Usage data helps us see which pages work and which need improving. We don't sell information or use it for advertising.",
+        ],
+      },
+      {
+        title: "Third-party services",
+        body: [
+          "WhatsApp conversations are covered by WhatsApp's (Meta's) privacy policy. Directions open in Google Maps and are covered by Google's policy. The site is hosted by Vercel.",
+        ],
+      },
+      {
+        title: "Cookies",
+        body: [
+          "The site doesn't use tracking or advertising cookies, so there's no cookie banner. If that changes, we'll update this policy and ask for your consent before switching anything on.",
+        ],
+      },
+      {
+        title: "Your rights",
+        body: [
+          "You can ask to see the information we hold about you, correct it or delete it. Contact us by phone or WhatsApp and we'll handle your request within 30 days.",
+        ],
+      },
+      {
+        title: "Privacy contact",
+        list: ["Phone: 054-237-7390", "Email: [Email address]"],
+      },
+    ],
+  },
+  terms: {
+    metaTitle: "Terms of Use | Dror Barazani INDOOR",
+    metaDescription: "Terms of use for the Dror Barazani INDOOR website, a renovation contractor in Jerusalem.",
+    title: "Terms of use",
+    updatedDate: "[Update date]",
+    sections: [
+      {
+        title: "General",
+        body: ["Using this website means you accept these terms. If you don't agree with them, please don't use the site."],
+      },
+      {
+        title: "Information on the site",
+        body: [
+          "The content here is meant to give you a sense of our services. It isn't a quote or a commitment. Price, scope and schedule are set only in a written quote, after a home visit.",
+        ],
+      },
+      {
+        title: "Photos and content",
+        body: [
+          "The photos on this site were taken on our own projects. All rights in the photos, text and design belong to Dror Barazani INDOOR. Please don't copy or reuse them without written permission.",
+        ],
+      },
+      {
+        title: "Links to other sites",
+        body: [
+          "The site links to services such as WhatsApp, Google Maps and Google reviews. We're not responsible for the content or availability of external sites.",
+        ],
+      },
+      {
+        title: "Liability",
+        body: [
+          "We try to keep the information on this site accurate and up to date, but it may contain errors. Warranty for renovation work is set out in the contract signed with each client.",
+        ],
+      },
+      {
+        title: "Governing law",
+        body: ["These terms are governed by Israeli law. The courts of Jerusalem have exclusive jurisdiction."],
+      },
+      {
+        title: "Changes",
+        body: ["We may update these terms from time to time. The version published on this site is the one that applies."],
+      },
+    ],
   },
 };
 

@@ -65,6 +65,16 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/privacy" className="text-sand underline decoration-brass underline-offset-4 hover:text-brass">
+                {t.footer.privacy}
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms" className="text-sand underline decoration-brass underline-offset-4 hover:text-brass">
+                {t.footer.terms}
+              </Link>
+            </li>
+            <li>
               <a href="#main" className="text-sand underline decoration-brass underline-offset-4 hover:text-brass">
                 {t.footer.backToTop}
               </a>

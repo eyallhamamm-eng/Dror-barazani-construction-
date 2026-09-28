@@ -1,5 +1,6 @@
 import { useId, useRef, useState, type FormEvent } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
+import { Clock, LoaderCircle, MapPin, Phone } from "lucide-react";
 import { business, mapsDirectionsUrl, whatsappUrl } from "../content/site";
 import { useLang } from "../lib/i18n";
 import { WhatsAppIcon } from "./icons";
@@ -24,10 +25,13 @@ export function Contact() {
   };
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState("");
+  const [pending, setPending] = useState(false);
+  const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (pending) return;
     const data = new FormData(e.currentTarget);
     const name = String(data.get("name") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
@@ -50,8 +54,17 @@ export function Contact() {
       data.get("message") ? `\n${data.get("message")}` : "",
     ].filter(Boolean);
 
+    // Open WhatsApp synchronously inside the submit handler so pop-up blockers allow it,
+    // then move to the thank-you page.
+    setPending(true);
+    setStatus(f.pending);
     window.open(whatsappUrl(lines.join("\n")), "_blank", "noopener,noreferrer");
-    setStatus(f.sent);
+    try {
+      await navigate({ to: "/thank-you" });
+    } catch {
+      setPending(false);
+      setStatus(f.sent);
+    }
   }
 
   const label = "mb-2 block text-[0.95rem] font-medium";
@@ -143,9 +156,17 @@ export function Contact() {
               />
             </div>
             <div className="sm:col-span-2">
-              <button type="submit" className="btn btn-ink w-full sm:w-auto">
-                <WhatsAppIcon size={20} />
-                {f.submit}
+              <button
+                type="submit"
+                aria-disabled={pending || undefined}
+                className="btn btn-ink w-full aria-disabled:opacity-80 sm:w-auto"
+              >
+                {pending ? (
+                  <LoaderCircle size={20} className="animate-spin" aria-hidden="true" />
+                ) : (
+                  <WhatsAppIcon size={20} />
+                )}
+                {pending ? f.pending : f.submit}
               </button>
               <p role="status" aria-live="polite" className="mt-4 min-h-6 text-sm font-medium text-ink">
                 {status}

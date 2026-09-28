@@ -37,7 +37,7 @@ function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${t.floating.whatsapp} ${t.newTab}`}
-      className="fab fixed bottom-5 end-5 z-50 bg-night text-brass hover:bg-[#2c241e] sm:bottom-6 sm:end-6"
+      className="fab fixed bottom-5 end-5 z-50 bg-[#a87b42] text-night hover:bg-brass sm:bottom-6 sm:end-6"
     >
       <WhatsAppIcon size={30} />
     </a>

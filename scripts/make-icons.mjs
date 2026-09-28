@@ -11,8 +11,8 @@ const padded = async (size) => {
   const inner = Math.round(size * 0.78);
   const pad = Math.round((size - inner) / 2);
   return sharp(await png(inner))
-    .extend({ top: pad, bottom: size - inner - pad, left: pad, right: size - inner - pad, background: "#1c1713" })
-    .flatten({ background: "#1c1713" })
+    .extend({ top: pad, bottom: size - inner - pad, left: pad, right: size - inner - pad, background: "#f8f4ec" })
+    .flatten({ background: "#f8f4ec" })
     .png()
     .toBuffer();
 };

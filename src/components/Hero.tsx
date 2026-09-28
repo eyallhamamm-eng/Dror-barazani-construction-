@@ -1,5 +1,5 @@
 import { Phone, Star } from "lucide-react";
-import { business, googleReviewsUrl, photos, whatsappUrl } from "../content/site";
+import { business, googleReviewsUrl, photoSrcSet, photos, whatsappUrl } from "../content/site";
 import { useLang } from "../lib/i18n";
 import { WhatsAppIcon } from "./icons";
 
@@ -11,6 +11,8 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="on-dark relative isolate overflow-hidden bg-night">
       <img
         src={photo.src}
+        srcSet={photoSrcSet(photo)}
+        sizes="100vw"
         width={photo.width}
         height={photo.height}
         alt={photo.alt[lang]}

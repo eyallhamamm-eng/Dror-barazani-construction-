@@ -14,7 +14,7 @@
 npm install
 npm run dev      # פיתוח: http://localhost:3000
 npm run build    # בנייה ל-dist/client (HTML סטטי + נכסים)
-npm run images   # המרת התמונות מ-assets/photos ל-WebP ב-public/images
+npm run images   # יצירת WebP בגודל 1x ו-2x ב-public/images מתוך assets/enhanced
 ```
 
 את התיקייה `dist/client` אפשר להעלות לכל אחסון סטטי (Netlify, Vercel, Cloudflare Pages, GitHub Pages).
@@ -32,6 +32,14 @@ npm run images   # המרת התמונות מ-assets/photos ל-WebP ב-public/im
 `/` · `/accessibility` · `/privacy` · `/terms` · `/thank-you` (אחרי שליחת הטופס, noindex) · `404.html` (לכל כתובת שלא קיימת)
 
 הלוגו (קשת אבן ירושלמית) נבנה בקוד ב-`scripts/make-logo.mjs`. `npm run logo` מייצר מחדש את הלוגו, את `favicon.svg` ואת כל הפביקונים.
+
+## תמונות
+
+1. `assets/photos`: המקור (הבקבוק הוסר משתי תמונות עם `scripts/remove_bottle.py`).
+2. `python3 scripts/enhance_photos.py`: ניקוי דחיסה, הגדלה פי 2 וחידוד (בלי AI), לתיקייה `assets/enhanced`. דורש `pip install opencv-python-headless numpy`.
+3. `npm run images`: יוצר את קובצי ה-WebP לאתר.
+
+כשיגיעו תמונות מקוריות מהטלפון, מחליפים אותן ב-`assets/photos` ומריצים את שלבים 2 ו-3.
 
 ## מבנה
 

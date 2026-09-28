@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { galleryOrder, googleReviewsUrl, photos } from "../content/site";
+import { galleryOrder, googleReviewsUrl, photoSrcSet, photos } from "../content/site";
 import { useLang } from "../lib/i18n";
 import { ServiceGlyph } from "./icons";
 
@@ -68,6 +68,8 @@ export function About() {
           <div className="arch relative aspect-[3/4] shadow-[0_30px_60px_-30px_rgb(28_23_19/0.5)]">
             <img
               src={photo.src}
+              srcSet={photoSrcSet(photo)}
+              sizes="(min-width: 1024px) 28rem, 90vw"
               width={photo.width}
               height={photo.height}
               alt={photo.alt[lang]}
@@ -131,6 +133,8 @@ export function Gallery() {
               <li key={key} className="masonry-item">
                 <img
                   src={p.src}
+                  srcSet={photoSrcSet(p)}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                   width={p.width}
                   height={p.height}
                   alt={p.alt[lang]}

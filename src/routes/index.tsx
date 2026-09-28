@@ -13,7 +13,6 @@ export const Route = createFileRoute("/")({
     meta: socialMeta({ title: he.meta.title, description: he.meta.description, path: "/" }),
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", as: "image", href: "/images/living-double-height.webp", fetchPriority: "high" },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusinessJsonLd) }],
   }),

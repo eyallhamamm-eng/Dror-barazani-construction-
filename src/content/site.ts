@@ -44,6 +44,11 @@ export type Photo = {
   alt: Record<Lang, string>;
 };
 
+/** 1x and 2x (enhanced) WebP variants, for srcset. */
+export function photoSrcSet(p: Photo) {
+  return `${p.src} ${p.width}w, ${p.src.replace(/\.webp$/, "@2x.webp")} ${p.width * 2}w`;
+}
+
 // Every photo is a real project by the business. Alt text describes what is actually in the frame.
 export const photos: Record<string, Photo> = {
   livingDoubleHeight: {

@@ -9,6 +9,7 @@ export type LegalDoc = {
   metaTitle: string;
   title: string;
   updatedDate: string;
+  updatedISO: string;
   sections: Section[];
 };
 
@@ -35,7 +36,9 @@ export function LegalPage({ doc, updatedLabel, children }: { doc: LegalDoc; upda
 
       <h1 className="font-display mt-12 text-5xl sm:text-6xl">{doc.title}</h1>
       <p className="mt-4 text-muted">
-        {updatedLabel} <span className="font-medium text-ink">{doc.updatedDate}</span>
+        {updatedLabel} <time dateTime={doc.updatedISO} className="font-medium text-ink">
+          {doc.updatedDate}
+        </time>
       </p>
 
       <div className="mt-12 space-y-12">

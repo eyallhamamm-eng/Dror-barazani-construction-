@@ -10,6 +10,9 @@ export const LANG_STORAGE_KEY = "indoor-lang";
 // Replace with the production domain before launch (used for canonical + Open Graph URLs).
 export const SITE_URL = "https://indoor-jerusalem.example";
 
+/** Publication / last-update date of the accessibility statement, privacy policy and terms. */
+export const LEGAL_UPDATED = "2026-09-28";
+
 export const business = {
   phoneDisplay: "054-237-7390",
   phoneE164: "+972542377390",
@@ -382,7 +385,8 @@ const he = {
     back: "חזרה לעמוד הבית",
     title: "הצהרת נגישות",
     updated: "עודכן לאחרונה:",
-    updatedDate: "[תאריך עדכון]",
+    updatedDate: "28 בספטמבר 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "מחויבות לנגישות",
@@ -466,7 +470,8 @@ const he = {
     metaTitle: "מדיניות פרטיות | דרור ברזני INDOOR",
     metaDescription: "איך אתר דרור ברזני INDOOR מטפל במידע שלכם: מה נאסף, למה, ואיך מבקשים לעיין במידע או למחוק אותו.",
     title: "מדיניות פרטיות",
-    updatedDate: "[תאריך עדכון]",
+    updatedDate: "28 בספטמבר 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "מי אנחנו",
@@ -517,7 +522,8 @@ const he = {
     metaTitle: "תנאי שימוש | דרור ברזני INDOOR",
     metaDescription: "תנאי השימוש באתר דרור ברזני INDOOR, קבלן שיפוצים בירושלים.",
     title: "תנאי שימוש",
-    updatedDate: "[תאריך עדכון]",
+    updatedDate: "28 בספטמבר 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "כללי",
@@ -758,7 +764,8 @@ const en: Dict = {
     back: "Back to home page",
     title: "Accessibility statement",
     updated: "Last updated:",
-    updatedDate: "[Update date]",
+    updatedDate: "September 28, 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "Our commitment",
@@ -842,7 +849,8 @@ const en: Dict = {
     metaTitle: "Privacy Policy | Dror Barazani INDOOR",
     metaDescription: "How the Dror Barazani INDOOR website handles your information: what's collected, why, and how to ask to see or delete it.",
     title: "Privacy policy",
-    updatedDate: "[Update date]",
+    updatedDate: "September 28, 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "Who we are",
@@ -893,7 +901,8 @@ const en: Dict = {
     metaTitle: "Terms of Use | Dror Barazani INDOOR",
     metaDescription: "Terms of use for the Dror Barazani INDOOR website, a renovation contractor in Jerusalem.",
     title: "Terms of use",
-    updatedDate: "[Update date]",
+    updatedDate: "September 28, 2026",
+    updatedISO: LEGAL_UPDATED,
     sections: [
       {
         title: "General",

@@ -10,7 +10,7 @@ export function NotFound() {
   useDocumentTitle(n.metaTitle);
   return (
     <section aria-labelledby="nf-title" className="mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6 lg:py-32">
-      <ArchMark className="h-24 w-20 text-brass-ink" />
+      <ArchMark className="h-28 w-[6.1rem] text-brass-ink" />
       <p className="eyebrow mt-10">{n.eyebrow}</p>
       <h1 id="nf-title" className="font-display mt-4 text-5xl sm:text-6xl">
         {n.title}

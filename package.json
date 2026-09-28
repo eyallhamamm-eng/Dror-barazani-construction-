@@ -8,6 +8,7 @@
     "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.mjs",
+    "logo": "node scripts/make-logo.mjs && node scripts/make-icons.mjs",
     "icons": "node scripts/make-icons.mjs",
     "typecheck": "tsc --noEmit"
   },

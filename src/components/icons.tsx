@@ -1,5 +1,6 @@
 import { Accessibility, BrickWall, CookingPot, Hammer, House, ShowerHead, type LucideProps } from "lucide-react";
 import type { ServiceIcon } from "../content/site";
+import { MARK_PATH, MARK_PATH_SMALL, MARK_VIEWBOX } from "./logo-paths";
 
 /** Official WhatsApp glyph (Simple Icons): speech bubble with the handset inside. Colour comes from currentColor. */
 export function WhatsAppIcon({ size = 24, className }: { size?: number; className?: string }) {
@@ -18,13 +19,11 @@ export function WhatsAppIcon({ size = 24, className }: { size?: number; classNam
   );
 }
 
-/** Brand mark: an arched doorway ("in-door"), drawn in brass. */
-export function ArchMark({ className }: { className?: string }) {
+/** Brand mark: a Jerusalem-stone arched doorway. Colour comes from currentColor. */
+export function ArchMark({ className, small = false }: { className?: string; small?: boolean }) {
   return (
-    <svg viewBox="0 0 32 40" className={className} aria-hidden="true" focusable="false" fill="none">
-      <path d="M3 39V17C3 9.268 8.82 3 16 3s13 6.268 13 14v22" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M9 39V19c0-4.418 3.134-8 7-8s7 3.582 7 8v20" stroke="currentColor" strokeWidth="1.2" opacity=".55" />
-      <path d="M1 39h30" stroke="currentColor" strokeWidth="1.6" />
+    <svg viewBox={MARK_VIEWBOX} className={className} aria-hidden="true" focusable="false" fill="currentColor">
+      <path d={small ? MARK_PATH_SMALL : MARK_PATH} />
     </svg>
   );
 }

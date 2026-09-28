@@ -24,7 +24,7 @@ export function Brand() {
   const { t } = useLang();
   return (
     <a href="/" className="group inline-flex items-center gap-3 rounded-sm">
-      <ArchMark className="h-9 w-7 shrink-0 text-brass-ink" />
+      <ArchMark className="h-10 w-[2.2rem] shrink-0 text-brass-ink" />
       <span className="flex flex-col leading-none">
         <span className="font-display whitespace-nowrap text-[1.45rem] text-ink">{t.brand.name}</span>
         <span className="mt-1 whitespace-nowrap text-[0.75rem] font-medium tracking-[0.22em] text-muted">

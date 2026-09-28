@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <ArchMark className="h-10 w-8 text-brass" />
+              <ArchMark className="h-12 w-[2.6rem] text-brass" />
               <p className="flex flex-col leading-none">
                 <span className="font-display text-2xl">{t.brand.name}</span>
                 <span className="mt-1 text-xs font-medium tracking-[0.22em] text-night-muted">INDOOR</span>

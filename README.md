@@ -31,7 +31,7 @@ npm run images   # המרת התמונות מ-assets/photos ל-WebP ב-public/im
 
 `/` · `/accessibility` · `/privacy` · `/terms` · `/thank-you` (אחרי שליחת הטופס, noindex) · `404.html` (לכל כתובת שלא קיימת)
 
-`npm run icons` בונה מחדש את סט הפביקונים מ-`public/favicon.svg`.
+הלוגו (קשת אבן ירושלמית) נבנה בקוד ב-`scripts/make-logo.mjs`. `npm run logo` מייצר מחדש את הלוגו, את `favicon.svg` ואת כל הפביקונים.
 
 ## מבנה
 

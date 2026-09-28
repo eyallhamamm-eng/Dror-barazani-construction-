@@ -1,7 +1,6 @@
 import { Star } from "lucide-react";
 import { galleryOrder, googleReviewsUrl, photoSrcSet, photos } from "../content/site";
 import { useLang } from "../lib/i18n";
-import { ServiceGlyph } from "./icons";
 
 function SectionHeading({
   id,
@@ -31,27 +30,16 @@ export function Services() {
   const { t } = useLang();
   return (
     <section id="services" aria-labelledby="services-title" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        <SectionHeading
-          id="services-title"
-          eyebrow={t.services.eyebrow}
-          title={t.services.title}
-          intro={t.services.intro}
-          className="lg:sticky lg:top-32 lg:self-start"
-        />
-        <ul className="grid border-t border-line sm:grid-cols-2">
-          {t.services.items.map((s, i) => (
-            <li
-              key={s.title}
-              className={`border-b border-line py-8 sm:px-6 ${i % 2 === 0 ? "sm:border-e sm:ps-0" : "sm:pe-0"}`}
-            >
-              <ServiceGlyph name={s.icon} size={28} strokeWidth={1.3} className="text-brass-ink" />
-              <h3 className="font-display mt-5 text-[1.7rem] leading-tight">{s.title}</h3>
-              <p className="mt-3 text-muted">{s.text}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <SectionHeading id="services-title" eyebrow={t.services.eyebrow} title={t.services.title} intro={t.services.intro} />
+      {/* Bordered grid: the 1px gaps over a line-coloured background draw every cell border once. */}
+      <ul className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        {t.services.items.map((s) => (
+          <li key={s.title} className="bg-sand p-8 lg:p-10">
+            <h3 className="font-display text-[1.7rem] leading-tight">{s.title}</h3>
+            <p className="mt-4 text-muted">{s.text}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

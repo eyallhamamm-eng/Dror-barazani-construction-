@@ -1,5 +1,3 @@
-import { Accessibility, BrickWall, CookingPot, Hammer, House, ShowerHead, type LucideProps } from "lucide-react";
-import type { ServiceIcon } from "../content/site";
 import { MARK_PATH, MARK_PATH_SMALL, MARK_VIEWBOX } from "./logo-paths";
 
 /** Official WhatsApp glyph (Simple Icons): speech bubble with the handset inside. Colour comes from currentColor. */
@@ -26,18 +24,4 @@ export function ArchMark({ className, small = false }: { className?: string; sma
       <path d={small ? MARK_PATH_SMALL : MARK_PATH} />
     </svg>
   );
-}
-
-const serviceIcons: Record<ServiceIcon, React.ComponentType<LucideProps>> = {
-  house: House,
-  kitchen: CookingPot,
-  shower: ShowerHead,
-  accessible: Accessibility,
-  tiles: BrickWall,
-  carpentry: Hammer,
-};
-
-export function ServiceGlyph({ name, ...props }: { name: ServiceIcon } & LucideProps) {
-  const Icon = serviceIcons[name];
-  return <Icon aria-hidden="true" focusable="false" {...props} />;
 }

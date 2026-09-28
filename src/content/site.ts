@@ -187,8 +187,6 @@ export const galleryOrder: (keyof typeof photos)[] = [
   "livingDoubleHeight",
 ];
 
-export type ServiceIcon = "house" | "kitchen" | "shower" | "accessible" | "tiles" | "carpentry";
-
 const he = {
   meta: {
     title: "דרור ברזני INDOOR | קבלן שיפוצים בירושלים",
@@ -229,32 +227,26 @@ const he = {
     intro: "עבודות שיפוץ בדירות ובבתים פרטיים בירושלים והסביבה.",
     items: [
       {
-        icon: "house" as ServiceIcon,
         title: "שיפוץ דירה מלא",
         text: "הריסה, חשמל, אינסטלציה, טיח וצבע.",
       },
       {
-        icon: "kitchen" as ServiceIcon,
         title: "מטבחים",
         text: "פירוק המטבח הקיים, התקנת ארונות ומשטח, וחיבור למים ולחשמל.",
       },
       {
-        icon: "shower" as ServiceIcon,
         title: "חדרי רחצה",
         text: "איטום, ריצוף וחיפוי, התקנת כלים סניטריים ומקלחונים.",
       },
       {
-        icon: "accessible" as ServiceIcon,
         title: "התאמות נגישות",
         text: "מקלחות ללא סף, מאחזים, מושבי מקלחת ושירותים נגישים.",
       },
       {
-        icon: "tiles" as ServiceIcon,
         title: "ריצוף וחיפוי",
         text: "ריצוף וחיפוי קירות באריחים בכל הגדלים.",
       },
       {
-        icon: "carpentry" as ServiceIcon,
         title: "נגרות ומדרגות",
         text: "ארונות קיר, ספריות, דלתות פנים ומדרגות.",
       },
@@ -611,32 +603,26 @@ const en: Dict = {
     intro: "Renovation work in apartments and private homes in and around Jerusalem.",
     items: [
       {
-        icon: "house",
         title: "Full home renovation",
         text: "Demolition, electrics, plumbing, plastering and painting.",
       },
       {
-        icon: "kitchen",
         title: "Kitchens",
         text: "Removing the existing kitchen, fitting cabinets and worktops, and connecting water and power.",
       },
       {
-        icon: "shower",
         title: "Bathrooms",
         text: "Waterproofing, tiling, and fitting sanitary ware and shower enclosures.",
       },
       {
-        icon: "accessible",
         title: "Accessibility adaptations",
         text: "Step-free showers, grab bars, shower seats and accessible toilets.",
       },
       {
-        icon: "tiles",
         title: "Flooring and tiling",
         text: "Floor and wall tiling in all tile sizes.",
       },
       {
-        icon: "carpentry",
         title: "Carpentry and stairs",
         text: "Built-in wardrobes, shelving, interior doors and stairs.",
       },

@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (no third-party requests). unicode-range subsets mean each page only downloads the scripts it uses. */
+@import "@fontsource/cormorant-garamond/300.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/300-italic.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/jost/300.css";
+@import "@fontsource/jost/400.css";
+@import "@fontsource/jost/500.css";
+@import "@fontsource/frank-ruhl-libre/300.css";
+@import "@fontsource/frank-ruhl-libre/400.css";
+@import "@fontsource/heebo/300.css";
+@import "@fontsource/heebo/400.css";
+@import "@fontsource/heebo/500.css";
+
+/*
+  "Jerusalem stone, warm sand and antique brass".
+  Cormorant Garamond and Jost have no Hebrew glyphs, so each stack continues with a Hebrew
+  face of the same character: Frank Ruhl Libre (serif) and Heebo (geometric sans).
+*/
+@theme {
+  --color-sand: #f8f4ec;
+  --color-stone: #ece7de;
+  --color-ink: #241e1a;
+  --color-brass: #b6894f;
+  /* Darker brass for text on light backgrounds: 5.6:1 on sand, 5.0:1 on stone (brass itself is 2.9:1). */
+  --color-brass-ink: #7f5b2b;
+  --color-muted: #69625a;
+  --color-line: #d9d3c9;
+  /* Field borders need 3:1 against the background (WCAG 1.4.11); --color-line is decorative only. */
+  --color-field: #8c8378;
+  --color-paper: #fffdf9;
+  --color-night: #1c1713;
+  --color-night-muted: #b9b0a4;
+
+  --font-display: "Cormorant Garamond", "Frank Ruhl Libre", Georgia, serif;
+  --font-sans: "Jost", "Heebo", ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:root {
+  --focus-ring: var(--color-ink);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hebrew reads better a touch larger and looser than Latin at the same size. */
+html[lang="he"] body {
+  line-height: 1.75;
+}
+
+/* Component classes live in the components layer so Tailwind utilities (hidden, lg:flex...) can override them. */
+@layer components {
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  font-optical-sizing: auto;
+}
+html[lang="he"] .font-display {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brass-ink);
+}
+html[lang="he"] .eyebrow {
+  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+}
+.on-dark .eyebrow {
+  color: var(--color-brass);
+}
+
+/* ---------- Focus ---------- */
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark {
+  --focus-ring: var(--color-brass);
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-ink);
+  color: var(--color-sand);
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transform: translateY(-200%);
+  transition: transform 160ms var(--ease-out-strong);
+}
+.skip-link:focus-visible,
+.skip-link:focus {
+  transform: translateY(0);
+  --focus-ring: var(--color-brass);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition:
+    transform 160ms var(--ease-out-strong),
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-brass {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+.btn-brass:hover {
+  background: #c79a5e;
+}
+.btn-ghost-light {
+  border: 1px solid rgb(248 244 236 / 0.7);
+  color: var(--color-sand);
+}
+.btn-ghost-light:hover {
+  background: rgb(248 244 236 / 0.12);
+}
+.btn-ink {
+  background: var(--color-ink);
+  color: var(--color-sand);
+}
+.btn-ink:hover {
+  background: #3a312a;
+}
+
+/* Underlined text links with a brass hairline that thickens on hover. */
+.text-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--color-brass);
+  transition: text-decoration-thickness 160ms ease;
+}
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Signature: the Jerusalem arch ---------- */
+.arch {
+  border-radius: 999px 999px 0 0 / 50% 50% 0 0;
+  overflow: hidden;
+}
+.arch-outline {
+  border: 1px solid var(--color-brass);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0 / 50% 50% 0 0;
+}
+
+/* ---------- Hero ---------- */
+.hero-scrim {
+  background: linear-gradient(to top, rgb(28 23 19 / 0.94) 0%, rgb(28 23 19 / 0.72) 55%, rgb(28 23 19 / 0.4) 100%);
+}
+@media (min-width: 64rem) {
+  [dir="rtl"] .hero-scrim {
+    background: linear-gradient(to left, rgb(28 23 19 / 0.9) 0%, rgb(28 23 19 / 0.62) 45%, rgb(28 23 19 / 0.12) 80%);
+  }
+  [dir="ltr"] .hero-scrim {
+    background: linear-gradient(to right, rgb(28 23 19 / 0.9) 0%, rgb(28 23 19 / 0.62) 45%, rgb(28 23 19 / 0.12) 80%);
+  }
+}
+
+/* One orchestrated entrance on load; everything else stays still. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 900ms var(--ease-out-strong) both;
+}
+.rise-1 { animation-delay: 80ms; }
+.rise-2 { animation-delay: 180ms; }
+.rise-3 { animation-delay: 280ms; }
+.rise-4 { animation-delay: 380ms; }
+
+@keyframes settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.hero-image {
+  animation: settle 2400ms var(--ease-out-strong) both;
+}
+
+/* ---------- Header material ---------- */
+.header-material {
+  background: rgb(248 244 236 / 0.86);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .header-material {
+    background: var(--color-sand);
+    backdrop-filter: none;
+  }
+}
+
+/* ---------- Form fields ---------- */
+.field {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-paper);
+  border: 1px solid var(--color-field);
+  border-radius: 0.5rem;
+  color: var(--color-ink);
+  font: inherit;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.field:hover {
+  border-color: var(--color-ink);
+}
+.field:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 1px;
+}
+.field[aria-invalid="true"] {
+  border-color: #a4262c;
+  border-width: 2px;
+}
+select.field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23241e1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  padding-inline-end: 2.75rem;
+}
+[dir="rtl"] select.field {
+  background-position: left 1rem center;
+}
+[dir="ltr"] select.field {
+  background-position: right 1rem center;
+}
+html.a11y-hc select.field {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* ---------- Gallery (masonry via CSS columns) ---------- */
+.masonry {
+  column-gap: 1rem;
+}
+@media (min-width: 64rem) {
+  .masonry {
+    column-gap: 1.25rem;
+  }
+}
+.masonry-item {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 1rem;
+}
+@media (min-width: 64rem) {
+  .masonry-item {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* ---------- Floating controls ---------- */
+.fab {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px -8px rgb(28 23 19 / 0.45), 0 2px 6px rgb(28 23 19 / 0.2);
+  transition: transform 160ms var(--ease-out-strong), background-color 200ms ease;
+}
+.fab:active {
+  transform: scale(0.95);
+}
+
+.a11y-panel {
+  transform-origin: bottom var(--panel-origin, left);
+  animation: panel-in 220ms var(--ease-out-strong) both;
+}
+[dir="rtl"] .a11y-panel {
+  --panel-origin: right;
+}
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+}
+
+/* ---------- Language switch: keep the page hidden until the stored language is applied ---------- */
+html.lang-pending body {
+  visibility: hidden;
+}
+
+/* ---------- Accessibility widget modes ---------- */
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.2em !important;
+  outline: 2px dashed currentColor;
+  outline-offset: 2px;
+}
+
+/* Greyscale everything except the floating controls (filter on <body> would break position: fixed). */
+html.a11y-mono #site-header,
+html.a11y-mono main,
+html.a11y-mono footer {
+  filter: grayscale(1);
+}
+
+html.a11y-hc {
+  --color-sand: #000;
+  --color-stone: #000;
+  --color-ink: #ffff00;
+  --color-brass: #ffff00;
+  --color-brass-ink: #ffff00;
+  --color-muted: #ffffff;
+  --color-line: #ffff00;
+  --color-field: #ffff00;
+  --color-paper: #000;
+  --color-night: #000;
+  --color-night-muted: #ffffff;
+  --focus-ring: #00ffff;
+  color-scheme: dark;
+}
+html.a11y-hc body {
+  background: #000;
+  color: #ffff00;
+}
+html.a11y-hc .on-dark {
+  --focus-ring: #00ffff;
+}
+html.a11y-hc .header-material {
+  background: #000;
+  backdrop-filter: none;
+  border-bottom: 1px solid #ffff00;
+}
+html.a11y-hc .hero-scrim {
+  background: rgb(0 0 0 / 0.88) !important;
+}
+html.a11y-hc .text-sand,
+html.a11y-hc .text-sand\/85,
+html.a11y-hc .text-sand\/90 {
+  color: #ffff00 !important;
+}
+html.a11y-hc .btn,
+html.a11y-hc .fab,
+html.a11y-hc .field {
+  background-color: #000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+html.a11y-hc a {
+  color: #ffff00;
+}
+html.a11y-hc .shadow-card {
+  box-shadow: none;
+}
+html.a11y-hc img {
+  outline: 1px solid #ffff00;
+}
+
+/* ---------- Motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+html.a11y-hc .a11y-on {
+  background: #ffff00 !important;
+  color: #000 !important;
+}

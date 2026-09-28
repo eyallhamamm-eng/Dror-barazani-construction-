@@ -1,0 +1,35 @@
+{
+  "name": "indoor-jerusalem",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview",
+    "images": "node scripts/optimize-images.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/frank-ruhl-libre": "^5.3.0",
+    "@fontsource/heebo": "^5.3.0",
+    "@fontsource/jost": "^5.3.0",
+    "@tanstack/react-router": "^1.170.40",
+    "@tanstack/react-start": "^1.168.59",
+    "lucide-react": "^1.48.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/cli": "^0.1.21",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}

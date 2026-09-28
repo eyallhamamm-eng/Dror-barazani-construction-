@@ -1,0 +1,11 @@
+node_modules
+.output
+.nitro
+.tanstack
+dist
+.vinxi
+*.log
+.DS_Store
+.playwright-cli
+# Playwright CLI output (may contain credentials)
+.playwright-cli/

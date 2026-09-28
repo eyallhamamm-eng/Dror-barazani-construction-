@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://indoor-jerusalem.example/sitemap.xml

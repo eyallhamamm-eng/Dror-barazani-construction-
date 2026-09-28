@@ -41,6 +41,6 @@ export const MARK_PATH_SMALL = "${smallMarkPath()}";
 );
 writeFileSync(
   "public/favicon.svg",
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1c1713"/><svg x="13" y="9" width="38" height="44" viewBox="-3 -1 54 62"><path fill="#b6894f" d="${smallMarkPath()}"/></svg></svg>\n`,
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1c1713"/><svg x="7" y="4" width="50" height="57" viewBox="-3 -1 54 62"><path fill="#b6894f" d="${smallMarkPath()}"/></svg></svg>\n`,
 );
 console.log("logo written");

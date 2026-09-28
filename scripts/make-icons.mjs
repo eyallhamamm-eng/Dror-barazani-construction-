@@ -6,9 +6,19 @@ import sharp from "sharp";
 const svg = await readFile("public/favicon.svg");
 const png = (size) => sharp(svg, { density: 512 }).resize(size, size).png().toBuffer();
 
-await writeFile("public/apple-touch-icon.png", await sharp(svg, { density: 512 }).resize(180, 180).flatten({ background: "#1c1713" }).png().toBuffer());
-await writeFile("public/icon-192.png", await png(192));
-await writeFile("public/icon-512.png", await png(512));
+// Home-screen icons get extra padding: iOS and Android round or mask the corners.
+const padded = async (size) => {
+  const inner = Math.round(size * 0.78);
+  const pad = Math.round((size - inner) / 2);
+  return sharp(await png(inner))
+    .extend({ top: pad, bottom: size - inner - pad, left: pad, right: size - inner - pad, background: "#1c1713" })
+    .flatten({ background: "#1c1713" })
+    .png()
+    .toBuffer();
+};
+await writeFile("public/apple-touch-icon.png", await padded(180));
+await writeFile("public/icon-192.png", await padded(192));
+await writeFile("public/icon-512.png", await padded(512));
 
 // ICO container with a single embedded 32x32 PNG.
 const ico32 = await png(32);

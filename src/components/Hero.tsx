@@ -65,10 +65,7 @@ export function Hero() {
             </a>
             <a href={`tel:${business.phoneE164}`} className="btn btn-ghost-light">
               <Phone size={18} strokeWidth={1.8} aria-hidden="true" />
-              <span>
-                {t.hero.ctaSecondary.replace(business.phoneDisplay, "")}
-                <span dir="ltr">{business.phoneDisplay}</span>
-              </span>
+              {t.hero.ctaSecondary}
             </a>
           </div>
 

@@ -46,7 +46,7 @@ export function Services() {
 
 export function About() {
   const { t, lang } = useLang();
-  const photo = photos.kitchenLed;
+  const photo = photos.stairs;
   return (
     <section aria-labelledby="about-title" className="bg-stone">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8 lg:py-32">

@@ -6,12 +6,12 @@ import { WhatsAppIcon } from "./icons";
 export function Hero() {
   const { t, lang } = useLang();
   const photo = photos.livingDoubleHeight;
-  const mobile = photos.stairs;
+  const mobile = photos.kitchenLed;
 
   return (
     <section aria-labelledby="hero-title" className="on-dark relative isolate overflow-hidden bg-night">
       {/*
-        Phones get the portrait stairs photo, wider screens the landscape living room, so neither is
+        Phones get the portrait LED-kitchen photo, wider screens the landscape living room, so neither is
         cropped hard. Two <img> elements rather than <picture> so each keeps its own accurate alt text.
         The one hidden with display:none is lazy, so browsers don't download it.
       */}
@@ -24,7 +24,7 @@ export function Hero() {
         alt={mobile.alt[lang]}
         loading="lazy"
         decoding="async"
-        className="hero-image absolute inset-0 -z-20 h-full w-full object-cover object-[50%_45%] md:hidden"
+        className="hero-image absolute inset-0 -z-20 h-full w-full object-cover object-[50%_50%] md:hidden"
       />
       <img
         src={photo.src}

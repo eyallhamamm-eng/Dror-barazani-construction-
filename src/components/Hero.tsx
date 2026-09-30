@@ -6,26 +6,14 @@ import { WhatsAppIcon } from "./icons";
 export function Hero() {
   const { t, lang } = useLang();
   const photo = photos.livingDoubleHeight;
-  const mobile = photos.kitchenLed;
 
   return (
     <section aria-labelledby="hero-title" className="on-dark relative isolate overflow-hidden bg-night">
       {/*
-        Phones get the portrait LED-kitchen photo, wider screens the landscape living room, so neither is
-        cropped hard. Two <img> elements rather than <picture> so each keeps its own accurate alt text.
-        The one hidden with display:none is lazy, so browsers don't download it.
+        One photo for every screen. Phones: the photo sits on its own, full and uncropped, with the
+        text on the dark block below it. From md up: the photo fills the section behind the text,
+        with a dark overlay that keeps the text readable.
       */}
-      <img
-        src={mobile.src}
-        srcSet={photoSrcSet(mobile)}
-        sizes="100vw"
-        width={mobile.width}
-        height={mobile.height}
-        alt={mobile.alt[lang]}
-        loading="lazy"
-        decoding="async"
-        className="hero-image absolute inset-0 -z-20 h-full w-full object-cover object-[50%_50%] md:hidden"
-      />
       <img
         src={photo.src}
         srcSet={photoSrcSet(photo)}
@@ -33,13 +21,13 @@ export function Hero() {
         width={photo.width}
         height={photo.height}
         alt={photo.alt[lang]}
-        loading="lazy"
+        fetchPriority="high"
         decoding="async"
-        className="hero-image absolute inset-0 -z-20 hidden h-full w-full object-cover object-[50%_60%] md:block"
+        className="hero-image block h-auto w-full md:absolute md:inset-0 md:-z-20 md:h-full md:object-cover md:object-[50%_60%]"
       />
-      <div className="hero-scrim absolute inset-0 -z-10" aria-hidden="true" />
+      <div className="hero-scrim absolute inset-0 -z-10 hidden md:block" aria-hidden="true" />
 
-      <div className="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-7xl flex-col justify-end px-4 pb-28 pt-40 sm:px-6 lg:min-h-[44rem] lg:justify-center lg:px-8 lg:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col px-4 pb-24 pt-10 sm:px-6 md:min-h-[calc(100svh-4.5rem)] md:justify-end md:pb-28 md:pt-40 lg:min-h-[44rem] lg:justify-center lg:px-8 lg:py-24">
         <div className="max-w-2xl">
           <p className="eyebrow rise rise-1 !text-sand">{t.hero.eyebrow}</p>
           <h1
